@@ -460,17 +460,19 @@ package android.bluetooth {
     field public static final int SAMPLE_RATE_NONE = 0; // 0x0
     field @Deprecated public static final int SOURCE_CODEC_TYPE_AAC = 1; // 0x1
     field @Deprecated public static final int SOURCE_CODEC_TYPE_APTX = 2; // 0x2
-    field public static final int SOURCE_CODEC_TYPE_APTX_ADAPTIVE = 7; // 0x7
+    field public static final int SOURCE_CODEC_TYPE_APTX_ADAPTIVE = 9; // 0x9
     field @Deprecated public static final int SOURCE_CODEC_TYPE_APTX_HD = 3; // 0x3
-    field public static final int SOURCE_CODEC_TYPE_APTX_TWSP = 8; // 0x8
-    field public static final int SOURCE_CODEC_TYPE_CELT = 10; // 0xa
+    field public static final int SOURCE_CODEC_TYPE_APTX_TWSP = 10; // 0xa
+    field public static final int SOURCE_CODEC_TYPE_CELT = 12; // 0xc
     field @Deprecated public static final int SOURCE_CODEC_TYPE_INVALID = 1000000; // 0xf4240
     field @Deprecated public static final int SOURCE_CODEC_TYPE_LC3 = 5; // 0x5
     field @Deprecated public static final int SOURCE_CODEC_TYPE_LDAC = 4; // 0x4
-    field public static final int SOURCE_CODEC_TYPE_MAX = 7; // 0x7
+    field @Deprecated public static final int SOURCE_CODEC_TYPE_LHDCV3 = 7; // 0x7
+    field @Deprecated public static final int SOURCE_CODEC_TYPE_LHDCV5 = 8; // 0x8
+    field public static final int SOURCE_CODEC_TYPE_MAX = 9; // 0x9
     field @Deprecated public static final int SOURCE_CODEC_TYPE_OPUS = 6; // 0x6
     field @Deprecated public static final int SOURCE_CODEC_TYPE_SBC = 0; // 0x0
-    field public static final int SOURCE_QVA_CODEC_TYPE_MAX = 9; // 0x9
+    field public static final int SOURCE_QVA_CODEC_TYPE_MAX = 11; // 0xb
   }
 
   public static final class BluetoothCodecConfig.Builder {
@@ -517,6 +519,8 @@ package android.bluetooth {
     field public static final long CODEC_ID_APTX = 16797695L; // 0x1004fffL
     field public static final long CODEC_ID_APTX_HD = 604035071L; // 0x2400d7ffL
     field public static final long CODEC_ID_LDAC = -1442763265L; // 0xffffffffaa012dffL
+    field public static final long CODEC_ID_LHDCV3 = 13770137695L; // 0x334c3a05fL
+    field public static final long CODEC_ID_LHDCV5 = 228912137727L; // 0x354c3a05ffL
     field public static final long CODEC_ID_OPUS = 16834815L; // 0x100e0ffL
     field public static final long CODEC_ID_SBC = 0L; // 0x0L
     field @FlaggedApi("com.android.bluetooth.flags.a2dp_offload_codec_extensibility") @NonNull public static final android.os.Parcelable.Creator<android.bluetooth.BluetoothCodecType> CREATOR;

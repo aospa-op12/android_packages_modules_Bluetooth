@@ -28,6 +28,7 @@
 #include "a2dp_vendor_aptx_constants.h"
 #include "a2dp_vendor_aptx_hd_constants.h"
 #include "a2dp_vendor_ldac_constants.h"
+#include "a2dp_vendor_lhdc_constants.h"
 #include"a2dp_vendor_aptx_adaptive.h"
 #include "bta/av/bta_av_int.h"
 #include "btif/include/btif_av.h"

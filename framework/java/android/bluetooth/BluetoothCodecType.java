@@ -57,6 +57,12 @@ public final class BluetoothCodecType implements Parcelable {
     /** LDAC codec identifier. See {@link BluetoothCodecType#getCodecId}. */
     public static final long CODEC_ID_LDAC = 0x00aa012dff;
 
+    /** LHDCV3 codec identifier. See {@link BluetoothCodecType#getCodecId}. */
+    public static final long CODEC_ID_LHDCV3 = 0x334c3a05fL;
+
+    /** LHDCV5 codec identifier. See {@link BluetoothCodecType#getCodecId}. */
+    public static final long CODEC_ID_LHDCV5 = 0x354c3a05ffL;
+
     /** Opus codec identifier. See {@link BluetoothCodecType#getCodecId}. */
     public static final long CODEC_ID_OPUS = 0x000100e0ff;
 
@@ -176,6 +182,8 @@ public final class BluetoothCodecType implements Parcelable {
                     case BluetoothCodecConfig.SOURCE_CODEC_TYPE_APTX -> CODEC_ID_APTX;
                     case BluetoothCodecConfig.SOURCE_CODEC_TYPE_APTX_HD -> CODEC_ID_APTX_HD;
                     case BluetoothCodecConfig.SOURCE_CODEC_TYPE_LDAC -> CODEC_ID_LDAC;
+                    case BluetoothCodecConfig.SOURCE_CODEC_TYPE_LHDCV3 -> CODEC_ID_LHDCV3;
+                    case BluetoothCodecConfig.SOURCE_CODEC_TYPE_LHDCV5 -> CODEC_ID_LHDCV5;
                     case BluetoothCodecConfig.SOURCE_CODEC_TYPE_OPUS -> CODEC_ID_OPUS;
                     case BluetoothCodecConfig.SOURCE_CODEC_TYPE_APTX_ADAPTIVE -> CODEC_ID_APTX_AD;
                     case BluetoothCodecConfig.SOURCE_CODEC_TYPE_LC3,

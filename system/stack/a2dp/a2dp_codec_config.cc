@@ -34,6 +34,9 @@
 #include "a2dp_vendor_aptx_adaptive.h"
 #include "a2dp_vendor_ldac.h"
 #include "a2dp_vendor_opus.h"
+#include "a2dp_vendor_lhdcv3.h"
+#include "a2dp_vendor_lhdcv3_dec.h"
+#include "a2dp_vendor_lhdcv5.h"
 #endif
 
 #include "audio_hal_interface/a2dp_encoding.h"
@@ -168,6 +171,20 @@ A2dpCodecConfig* A2dpCodecConfig::createCodec(
     case BTAV_A2DP_CODEC_INDEX_SINK_OPUS:
       codec_config = new A2dpCodecConfigOpusSink(codec_priority);
       break;
+    // Savitech LHDC - START
+    case BTAV_A2DP_CODEC_INDEX_SOURCE_LHDCV3:
+      codec_config = new A2dpCodecConfigLhdcV3(codec_priority);
+      break;
+    case BTAV_A2DP_CODEC_INDEX_SOURCE_LHDCV5:
+      codec_config = new A2dpCodecConfigLhdcV5Source(codec_priority);
+      break;
+    case BTAV_A2DP_CODEC_INDEX_SINK_LHDCV3:
+      codec_config = new A2dpCodecConfigLhdcV3Sink(codec_priority);
+      break;
+    case BTAV_A2DP_CODEC_INDEX_SINK_LHDCV5:
+      codec_config = new A2dpCodecConfigLhdcV5Sink(codec_priority);
+      break;
+    // Savitech LHDC - END
 #endif
     case BTAV_A2DP_CODEC_INDEX_MAX:
     default:
@@ -412,9 +429,12 @@ bool A2dpCodecConfig::setCodecUserConfig(
   //
   btav_a2dp_codec_config_t new_codec_config = getCodecConfig();
   if ((saved_codec_config.sample_rate != new_codec_config.sample_rate) ||
-      (saved_codec_config.bits_per_sample !=
-       new_codec_config.bits_per_sample) ||
-      (saved_codec_config.channel_mode != new_codec_config.channel_mode)) {
+      (saved_codec_config.bits_per_sample != new_codec_config.bits_per_sample) ||
+      (saved_codec_config.channel_mode != new_codec_config.channel_mode) ||
+      (saved_codec_config.codec_specific_1 != new_codec_config.codec_specific_1) || // Savitech LHDC
+      (saved_codec_config.codec_specific_2 != new_codec_config.codec_specific_2) ||
+      (saved_codec_config.codec_specific_3 != new_codec_config.codec_specific_3) ||
+      (saved_codec_config.codec_specific_4 != new_codec_config.codec_specific_4)) {
     *p_restart_input = true;
   }
 
